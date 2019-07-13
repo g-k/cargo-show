@@ -10,18 +10,17 @@ To install:
 
 ```sh
 $ cargo install cargo-show
-    Updating registry `https://github.com/rust-lang/crates.io-index`
- Downloading cargo-show v0.5.5
-  Installing cargo-show v0.5.5
-   Compiling cc v1.0.18
-   Compiling pkg-config v0.3.12
-   Compiling unicode-xid v0.0.4
+    Updating crates.io index
+  Installing cargo-show v0.5.7
+   Compiling proc-macro2 v0.4.30
+   Compiling unicode-xid v0.1.0
+   Compiling syn v0.15.39
 ...
-   Compiling g-k-crates-io-client v0.16.0
-   Compiling docopt v0.8.3
-   Compiling cargo-show v0.5.5
-    Finished release [optimized] target(s) in 3m 27.44s
+   Compiling g-k-crates-io-client v0.27.1
+   Compiling cargo-show v0.5.7
+    Finished release [optimized] target(s) in 2m 39s
   Installing /Users/greg/.cargo/bin/cargo-show
+   Installed package `cargo-show v0.5.7` (executable `cargo-show`)
 $
 ```
 
@@ -56,7 +55,7 @@ documentation: None
 homepage: None
 repository: None
 max_version: 0.0.1
-downloads: 1297
+downloads: 2513
 license: None
 created: 2014-12-04T23:41:05.915728+00:00
 updated: 2015-12-11T23:55:55.315022+00:00
@@ -66,7 +65,7 @@ To print JSON:
 
 ```json
 $ cargo show --json serde | cut -b '1-120'
-{"crate":{"id":"serde","name":"serde","updated_at":"2018-08-25T03:04:21.721448+00:00","versions":[105274,105095,104994,1
+{"crate":{"id":"serde","name":"serde","updated_at":"2019-06-27T17:55:32.789011+00:00","versions":[158762,157964,153883,1
 ```
 
 To print package metadata and direct dependencies (alternatively use `-L`):
@@ -81,11 +80,11 @@ description: Utilities for working with time-related functions in Rust.
 documentation: https://doc.rust-lang.org/time
 homepage: https://github.com/rust-lang/time
 repository: https://github.com/rust-lang/time
-max_version: 0.1.40
-downloads: 4211782
+max_version: 0.1.42
+downloads: 7569964
 license: None
 created: 2014-11-13T06:52:51.369245+00:00
-updated: 2018-05-10T19:25:59.151982+00:00
+updated: 2019-01-08T20:33:46.550386+00:00
 dependencies:
 libc ^0.2.1
 redox_syscall ^0.1
@@ -107,24 +106,24 @@ $ cargo show --dependencies --json time | python -m json.tool | head -n25
             "default_features": true,
             "downloads": 0,
             "features": [],
-            "id": 414415,
+            "id": 605296,
             "kind": "normal",
             "optional": false,
             "req": "^0.2.1",
             "target": null,
-            "version_id": 92243
+            "version_id": 127253
         },
         {
             "crate_id": "log",
             "default_features": true,
             "downloads": 0,
             "features": [],
-            "id": 414417,
+            "id": 605298,
             "kind": "dev",
             "optional": false,
             "req": "^0.4",
             "target": null,
-            "version_id": 92243
+            "version_id": 127253
 ```
 
 
