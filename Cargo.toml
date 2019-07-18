@@ -14,7 +14,7 @@ name = "cargo-show"
 path = "src/main.rs"
 
 [dependencies]
-docopt = "1.0.2"
+docopt = "1.1.0"
 g-k-crates-io-client = "0.27"
 serde = "1.0"
 serde_derive = "1.0"
