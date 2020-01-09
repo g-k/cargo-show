@@ -37,7 +37,7 @@ $($CARGO_CMD --help)
 To print package metadata:
 
 \`\`\`sh
-\$ cargo show webrender servo
+\$ cargo show nonexistent-package servo
 $($CARGO_CMD webrender servo 2>&1)
 \`\`\`
 
