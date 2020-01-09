@@ -12,13 +12,13 @@ To install:
 $ cargo install cargo-show
     Updating crates.io index
   Installing cargo-show v0.5.7
-   Compiling proc-macro2 v0.4.30
-   Compiling unicode-xid v0.1.0
-   Compiling syn v0.15.39
+ Downloading crates ...
+  Downloaded lazy_static v1.4.0
+  Downloaded strsim v0.9.3
 ...
    Compiling g-k-crates-io-client v0.27.1
    Compiling cargo-show v0.5.7
-    Finished release [optimized] target(s) in 2m 39s
+    Finished release [optimized] target(s) in 2m 30s
   Installing /Users/greg/.cargo/bin/cargo-show
    Installed package `cargo-show v0.5.7` (executable `cargo-show`)
 $
@@ -45,8 +45,8 @@ Display a metadata for a create at crates.io.
 To print package metadata:
 
 ```sh
-$ cargo show webrender servo
-Error fetching data for webrender: received 404 not found response code
+$ cargo show nonexistent-package servo
+Error fetching data for nonexistent-package: api errors (status 404 Not Found): Not Found
 ---
 id: servo
 name: servo
@@ -55,7 +55,7 @@ documentation: None
 homepage: None
 repository: None
 max_version: 0.0.1
-downloads: 2513
+downloads: 3137
 license: None
 created: 2014-12-04T23:41:05.915728+00:00
 updated: 2015-12-11T23:55:55.315022+00:00
@@ -65,7 +65,7 @@ To print JSON:
 
 ```json
 $ cargo show --json serde | cut -b '1-120'
-{"crate":{"id":"serde","name":"serde","updated_at":"2019-06-27T17:55:32.789011+00:00","versions":[158762,157964,153883,1
+{"crate":{"id":"serde","name":"serde","updated_at":"2019-12-16T04:09:49.363249+00:00","versions":[196666,192011,185512,1
 ```
 
 To print package metadata and direct dependencies (alternatively use `-L`):
@@ -75,23 +75,17 @@ $ cargo show --dependencies time
 ---
 id: time
 name: time
-description: Utilities for working with time-related functions in Rust.
-
-documentation: https://doc.rust-lang.org/time
-homepage: https://github.com/rust-lang/time
-repository: https://github.com/rust-lang/time
-max_version: 0.1.42
-downloads: 7569964
+description: Date and time library. Fully interoperable with the standard library. Mostly compatible with #![no_std].
+documentation: None
+homepage: None
+repository: https://github.com/time-rs/time
+max_version: 0.2.2
+downloads: 10771986
 license: None
 created: 2014-11-13T06:52:51.369245+00:00
-updated: 2019-01-08T20:33:46.550386+00:00
+updated: 2020-01-08T03:27:19.481880+00:00
 dependencies:
-libc ^0.2.1
-redox_syscall ^0.1
-winapi ^0.3.0
-rustc-serialize ^0.3 (opt)
-log ^0.4 (dev)
-winapi ^0.3.0 (dev)
+serde ^1 (opt)
 ```
 
 
@@ -102,28 +96,22 @@ $ cargo show --dependencies --json time | python -m json.tool | head -n25
 {
     "dependencies": [
         {
-            "crate_id": "libc",
-            "default_features": true,
+            "crate_id": "serde",
+            "default_features": false,
             "downloads": 0,
-            "features": [],
-            "id": 605296,
+            "features": [
+                "derive",
+                "alloc"
+            ],
+            "id": 1078018,
             "kind": "normal",
-            "optional": false,
-            "req": "^0.2.1",
+            "optional": true,
+            "req": "^1",
             "target": null,
-            "version_id": 127253
-        },
-        {
-            "crate_id": "log",
-            "default_features": true,
-            "downloads": 0,
-            "features": [],
-            "id": 605298,
-            "kind": "dev",
-            "optional": false,
-            "req": "^0.4",
-            "target": null,
-            "version_id": 127253
+            "version_id": 202181
+        }
+    ]
+}
 ```
 
 
