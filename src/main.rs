@@ -20,7 +20,7 @@ extern crate serde_derive;
 use std::fmt;
 use std::process;
 
-static DEFAULT: &'static str = "https://crates.io/";
+static DEFAULT: &'static str = "https://crates.io";
 
 static USAGE: &'static str = r"
 Usage:
