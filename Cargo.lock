@@ -45,7 +45,7 @@ dependencies = [
 
 [[package]]
 name = "cargo-show"
-version = "0.5.8"
+version = "0.5.9"
 dependencies = [
  "docopt 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "g-k-crates-io-client 0.27.1 (registry+https://github.com/rust-lang/crates.io-index)",
